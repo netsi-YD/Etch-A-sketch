@@ -1,0 +1,25 @@
+*{
+    margin: auto;
+    border: none;
+}
+#container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 640px;
+    height: 640px;
+    border: 2px solid black;
+    margin: 20px auto;
+}
+
+.squares{
+    width: 40px;
+      height: 40px;
+      border: 1px solid lightgray;
+      box-sizing: border-box;
+          flex: 1 0 auto;
+
+}
+div:hover{
+    color: blue;
+    background-color: black;
+}
