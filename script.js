@@ -1,24 +1,30 @@
 const container = document.getElementById('container');
 
+// Create initial grid
+createGrid(16);
+
 function createGrid(size) {
+  // Clear existing squares
   container.innerHTML = '';
 
-  container.style.display = 'grid';
-  container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
-  container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+  const squareSize = 640 / size; // 640px is container width/height
 
   for (let i = 0; i < size * size; i++) {
     const grid = document.createElement('div');
     grid.classList.add('squares');
+    grid.style.width = `${squareSize}px`;
+    grid.style.height = `${squareSize}px`;
+
+    // Hover effect
     grid.addEventListener('mouseover', () => {
       grid.style.backgroundColor = 'black';
     });
+
     container.appendChild(grid);
   }
 }
 
-createGrid(16); // Load default grid
-
+// Handle button click
 const button = document.querySelector("#btn");
 button.addEventListener("click", function () {
   let userSize = prompt("Enter number of squares per side (max 100):");
