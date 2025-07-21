@@ -4,3 +4,10 @@ const grid=document.createElement('div');
 grid.classList.add('squares');
 container.appendChild(grid);
 }
+const squares = document.querySelectorAll('.squares');
+
+squares.forEach(square => {
+  square.addEventListener('mouseover', () => {
+    square.style.backgroundColor = 'black'; 
+  });
+});
